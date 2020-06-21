@@ -36,7 +36,7 @@ public class OceanIpFilter implements GlobalFilter, Ordered {
         if (route == null) {
             return chain.filter(exchange);
         }
-        log.trace("OceanIpFilter start");
+        log.trace("id:"+exchange.getRequest().getId());
         URI uri = exchange.getRequest().getURI();
         URI routeUri = route.getUri();
         String ipHost = getOceanJobIPHost(routeUri.getHost());
